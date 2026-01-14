@@ -1,3 +1,5 @@
+import java.util.Random;
+
 public class Main {
     public static void main(String[] args) {
         int[] arr = fillRandomIntVector(30, 100, 200);
@@ -21,8 +23,9 @@ public class Main {
     private static int[] fillRandomIntVector(int size, int min, int max) {
         int[] arr = new int[size];
         int range = max - min + 1;
+        Random random = new Random();
         for (int i = 0; i < arr.length; i++) {
-            arr[i] = min + (int) (Math.random() * range);
+            arr[i] = min + random.nextInt(range);
         }
         return arr;
     }
